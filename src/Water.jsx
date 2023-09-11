@@ -2,6 +2,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Bottle from "./Bottle";
 import './Style.css'
+import { addToLS } from "./Store";
+
+
 
 const Water = () => {
     const [water,setWater]=useState([])
@@ -15,9 +18,8 @@ const Water = () => {
 
     const bottleHandler = (bot)=>{
         const btl=[...bottle,bot]
-        setBottle(btl)
-        // console.log(bot)
-        // console.log('click')
+        setBottle(btl);
+        addToLS(bot.id)
     }
 
     return (
@@ -27,14 +29,14 @@ const Water = () => {
             <div className="bol">
                 
                 {
-                    bottle.map(bol=> <img src={bol.img}></img>)
+                    bottle.map(bol=> <img key={bol.id} src={bol.img}></img>)
                     
                 }
                 
             </div>
             <div className="water">
                 {
-                    water.map(water => <Bottle water={water} bottleHandler={bottleHandler}></Bottle>)
+                    water.map(water => <Bottle key={bottle.id} water={water} bottleHandler={bottleHandler}></Bottle>)
                 }
             </div>
         </div>

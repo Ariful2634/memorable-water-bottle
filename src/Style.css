@@ -1,0 +1,19 @@
+.bottle{
+    border: 1px solid royalblue;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 15px;
+}
+
+.bottle img{
+    width: 250px;
+}
+.water{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 5px;
+}
+.bol img{
+    width: 100px;
+    margin-left: 10px;
+}
